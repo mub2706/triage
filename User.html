@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User</title>
+    <link rel="stylesheet" type="text/css" href="user.css">
+</head>
+<body>
+    <div class="header">
+        <h1>Welcome to the Hospital Triage App [<span id="datetime" class="datetime"></span>]</h1>
+        <h3>Average Wait Time Today: [<span id="averageWaitTime"></span> mins]</h3>
+    </div>
+    
+    <section class="patientInfo">
+        <h3>Patient Information</h3>
+        <form id="infoForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" class="wideInput" required>
+            
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" class="narrowInput" required>
+        </form>
+    </section>
+    
+    <h3>Type of Injury</h3>
+    <div class="injuryTypes"> 
+        <div class="category">
+            <label for="injuryTypes">Select Injury: </label>
+            <select id="injuryTypes">
+                <option value="0">None</option>            
+            </select>
+        </div>
+    </div>
+
+    <div class="urgencyLevel">
+        <div class="category">
+            <label for="urgencyLevel">Urgency Level:</label>
+            <select id="urgencyLevel">
+                <option value="0">None</option>
+            </select>
+        </div>
+    </div>
+    
+    <section class="info">
+        <h3>Additional Information</h3>
+        <form id="infoForm" action="http://localhost:3000/submit-form" method="post">
+            <label for="info">Comments:</label>
+            <input type="text" id="info">
+        </form>
+    </section>
+
+    <div class="submit"> <button type="button" onclick="submitForm()">Submit</button> </div>
+
+    <script src="user.js"></script>
+</body>
+</html>

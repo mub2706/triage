@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Example</title>
+    <link rel="stylesheet" type="text/css" href="hts-main.css">
+</head>
+<body>
+
+<div id="login-container">
+    <h2>Login</h2>
+    <form id="login-form">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+        <br>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="button" onclick="attemptLogin()">Login</button>
+    </form>
+</div>
+
+<div id="main-container">    
+    <h2>Main Window</h2>
+    <!-- Your other content here -->
+
+    <button onclick="logout()">Logout</button>
+</div>
+
+<script>
+    async function attemptLogin() {
+        const user_code = document.getElementById('username').value;
+        const user_pin = document.getElementById('password').value;
+
+        try {
+            const response = await fetch(`/login/${user_code}/${user_pin}`);
+            
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Login successful:', data);
+
+                // Redirect based on the 'full_privs' flag
+                if (data.full_privs === 'Y') {
+                    window.location.href = '/admin-dashboard';
+                } else {
+                    window.location.href = '/user-dashboard';
+                }
+            } else {
+                console.error('Login failed:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error during login:', error.message);
+        }
+    }
+
+    function logout() {
+        const loginContainer = document.getElementById('login-container');
+        const mainContainer = document.getElementById('main-container');
+
+        loginContainer.style.display = 'block';
+        mainContainer.style.display = 'none';
+    }
+</script>
+
+</body>
+</html>

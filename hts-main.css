@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#login-container {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+#main-container {
+  display: none;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    color: darkred;
+}
+
+.table {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+table, th, td {
+  table-layout: fixed;
+  display: table-cell;
+  border: 2px solid black;
+  background-color: darkgray;
+  padding: 2px;
+  
+  font-size: 20px;
+  color: black;
+  text-align: center;
+}
+
+td[data-category="entry"],
+td[data-category="attention"],
+td[data-category="injuryType"],
+td[data-category="painLevel"] {
+  width: 20%; /* Adjust the width as needed */
+}
+
+td[data-category="info"] {
+  width: 40%;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+}
+.data {
+  margin: 2px;
+  padding: 10px;  
+}
+
+.btn {
+    background-color: red;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    background-color: red;
+    padding :10px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}

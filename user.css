@@ -1,0 +1,76 @@
+body {
+    background-color: lightgray;
+    margin: 0;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: lightblue;
+    padding: 10px;
+}
+
+h2 {
+    text-align: left;
+    font-family: "Arial", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    margin: 0;
+}
+
+.datetime {
+    font-size: 14px;
+    color: #333;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+label {
+    margin-right: 10px;
+}
+
+.injuryTypes {
+    width: 300px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 500px;
+}
+
+#info {
+    height: 30px;
+    width: 470px;
+    font-weight: 100;
+    margin-top: 10px; 
+}
+
+.submit {
+    display: flex;
+    justify-content: left;
+    margin-top: 20px;
+    padding: 10px;
+}
+
+button {
+    background-color: lightblue;
+    color: black;
+    width: 10%; 
+    cursor: pointer;
+    padding: 10px; 
+    font-size: 15px; 
+}
+
+.wideInput {
+    width: 310px;
+}
+
+.narrowInput {
+    width: 40px;
+}
